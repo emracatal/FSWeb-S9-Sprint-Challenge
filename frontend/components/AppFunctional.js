@@ -93,13 +93,13 @@ export default function AppFunctional(props) {
     evt.preventDefault();
     // payloadu POST etmek için bir submit handlera da ihtiyacınız var.
     axios
-      .post("/http://localhost:9000/api/result", {
+      .post("http://localhost:9000/api/result", {
         email: email,
         steps: steps,
         ...getXY(),
       })
       .then(function (response) {
-        console.log(response.data);
+        console.log(response);
         setMessage(response.data.message);
       })
       .catch(function (error) {
